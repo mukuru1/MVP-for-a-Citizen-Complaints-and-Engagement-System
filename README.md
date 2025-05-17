@@ -1,3 +1,1 @@
-# MVP-for-a-Citizen-Complaints-and-Engagement-System
-
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/mukuru1/MVP-for-a-Citizen-Complaints-and-Engagement-System)
+This Citizen Engagement System MVP was developed using TypeScript to ensure robust type safety and maintainability. I focused on building a scalable and user-friendly platform that enables complaint submission, intelligent categorization, and status tracking. The system features a streamlined citizen interface and a simple admin dashboard for agency responses, laying the foundation for future AI-assisted routing and analytics integration.
