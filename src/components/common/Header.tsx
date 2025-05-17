@@ -45,7 +45,7 @@ const Header: React.FC = () => {
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
               <Bell className="h-8 w-8 text-blue-600" />
-              <span className="ml-2 text-xl font-bold text-gray-900">CiviConnect</span>
+              <span className="ml-2 text-xl font-bold text-gray-900">RWandaCOnnect</span>
             </Link>
             
             <nav className="hidden md:ml-8 md:flex md:space-x-8">

@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex items-center">
               <Bell className="h-8 w-8 text-blue-400" />
-              <span className="ml-2 text-xl font-bold">CiviConnect</span>
+              <span className="ml-2 text-xl font-bold">RWandaCOnnect</span>
             </div>
             <p className="mt-4 text-gray-400 text-sm">
               Empowering citizens and government agencies to work together for better communities.
@@ -63,15 +63,15 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-blue-400 mr-2 mt-0.5" />
-                <span className="text-gray-400">123 Government Plaza, City Center, State 12345</span>
+                <span className="text-gray-400">City Plaza, KN 2 St, Kigali</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-blue-400 mr-2" />
-                <span className="text-gray-400">(555) 123-4567</span>
+                <span className="text-gray-400">+250780528976</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-blue-400 mr-2" />
-                <span className="text-gray-400">help@civiconnect.gov</span>
+                <span className="text-gray-400">help@rwandaconnect.gov</span>
               </li>
             </ul>
             <div className="mt-6">
@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="mt-12 pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} CiviConnect. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} RWandaCOnnect. All rights reserved.</p>
           <p className="mt-2">A project of the Department of Citizen Engagement</p>
         </div>
       </div>

@@ -197,8 +197,8 @@ const Home: React.FC = () => {
                   R
                 </div>
                 <div className="ml-4">
-                  <h3 className="font-medium text-lg">Robert Chen</h3>
-                  <p className="text-gray-600">Riverside Resident</p>
+                  <h3 className="font-medium text-lg">Kabenga Donald</h3>
+                  <p className="text-gray-600">Nduba,Kigali,Rwanda</p>
                 </div>
               </div>
               <p className="text-gray-700">
@@ -221,8 +221,8 @@ const Home: React.FC = () => {
                   S
                 </div>
                 <div className="ml-4">
-                  <h3 className="font-medium text-lg">Sarah Johnson</h3>
-                  <p className="text-gray-600">Downtown Resident</p>
+                  <h3 className="font-medium text-lg">Irakoze Sarah</h3>
+                  <p className="text-gray-600">Kanombe,Kigali,Rwanda</p>
                 </div>
               </div>
               <p className="text-gray-700">
@@ -245,8 +245,8 @@ const Home: React.FC = () => {
                   M
                 </div>
                 <div className="ml-4">
-                  <h3 className="font-medium text-lg">Michael Rodriguez</h3>
-                  <p className="text-gray-600">Hillside Resident</p>
+                  <h3 className="font-medium text-lg">Kabenga Junior Edwin</h3>
+                  <p className="text-gray-600">Kacyiru,Kigali,Rwanda</p>
                 </div>
               </div>
               <p className="text-gray-700">
