@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
             </ul>
             <div className="mt-6">
               <h4 className="text-sm font-semibold mb-2">Emergency Services</h4>
-              <p className="text-gray-400 text-sm">For emergencies, please call: <span className="text-white font-bold">911</span></p>
+              <p className="text-gray-400 text-sm">For emergencies, please call: <span className="text-white font-bold">112</span></p>
             </div>
           </div>
         </div>
