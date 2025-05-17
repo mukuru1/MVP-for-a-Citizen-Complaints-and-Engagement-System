@@ -11,7 +11,7 @@ import Dashboard from './pages/Dashboard';
 import { AppProvider } from './contexts/AppContext';
 import { initializeLocalStorage } from './utils/storage';
 
-// Initialize data
+
 initializeLocalStorage();
 
 function App() {
