@@ -1,9 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
-import { AppState, User, Complaint, Response, Notification } from '../types';
+import { AppState, User, Complaint, Response, Notification, ComplaintStatus } from '../types';
 
 const LOCAL_STORAGE_KEY = 'citizenEngagementSystem';
 
-// Initial data setup
 const initializeLocalStorage = (): void => {
   if (!localStorage.getItem(LOCAL_STORAGE_KEY)) {
     const initialState: AppState = {
@@ -117,7 +116,6 @@ const initializeLocalStorage = (): void => {
   }
 };
 
-// Retrieve the application state from local storage
 const getAppState = (): AppState => {
   const data = localStorage.getItem(LOCAL_STORAGE_KEY);
   if (!data) {
@@ -127,12 +125,10 @@ const getAppState = (): AppState => {
   return JSON.parse(data);
 };
 
-// Save the application state to local storage
 const saveAppState = (state: AppState): void => {
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(state));
 };
 
-// User-related functions
 const getUsers = (): User[] => {
   return getAppState().users;
 };
@@ -168,7 +164,6 @@ const logoutUser = (): void => {
   saveAppState(updatedState);
 };
 
-// Complaint-related functions
 const getComplaints = (): Complaint[] => {
   return getAppState().complaints;
 };
@@ -207,7 +202,7 @@ const addComplaint = (complaint: Omit<Complaint, 'id' | 'responses' | 'submitted
 const updateComplaintStatus = (id: string, status: ComplaintStatus): void => {
   const appState = getAppState();
   const updatedComplaints = appState.complaints.map(complaint => 
-    complaint.id === id ? { ...complaint, status } : complaint
+    complaint.id === id ? { ...complaint, status: status as ComplaintStatus } : complaint
   );
   
   const updatedState = {
@@ -221,7 +216,8 @@ const updateComplaintStatus = (id: string, status: ComplaintStatus): void => {
 const assignComplaint = (id: string, agencyId: string): void => {
   const appState = getAppState();
   const updatedComplaints = appState.complaints.map(complaint => 
-    complaint.id === id ? { ...complaint, assignedTo: agencyId, status: 'in-review' } : complaint
+    complaint.id === id ? { ...complaint, assignedTo: agencyId, status: 'in-review' as ComplaintStatus } : complaint
+
   );
   
   const updatedState = {
@@ -232,7 +228,6 @@ const assignComplaint = (id: string, agencyId: string): void => {
   saveAppState(updatedState);
 };
 
-// Response-related functions
 const addResponse = (complaintId: string, text: string, respondedBy: string): Response => {
   const appState = getAppState();
   const newResponse: Response = {
@@ -260,7 +255,6 @@ const addResponse = (complaintId: string, text: string, respondedBy: string): Re
   
   saveAppState(updatedState);
   
-  // Add notification for the complaint owner
   const complaint = appState.complaints.find(c => c.id === complaintId);
   if (complaint) {
     addNotification(
@@ -273,7 +267,6 @@ const addResponse = (complaintId: string, text: string, respondedBy: string): Re
   return newResponse;
 };
 
-// Notification-related functions
 const getNotifications = (userId: string): Notification[] => {
   const appState = getAppState();
   return appState.notifications.filter(notification => notification.userId === userId);
@@ -317,7 +310,6 @@ const markNotificationAsRead = (id: string): void => {
   saveAppState(updatedState);
 };
 
-// Analytics functions
 const getComplaintStatistics = () => {
   const complaints = getComplaints();
   
@@ -361,7 +353,6 @@ const calculateAverageResponseTime = (complaints: Complaint[]) => {
     return total + (firstResponseAt - submittedAt);
   }, 0);
   
-  // Return average in hours
   return Math.round(totalResponseTime / complaintsWithResponses.length / (1000 * 60 * 60));
 };
 

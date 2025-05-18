@@ -39,7 +39,11 @@ const AgencyDashboard: React.FC = () => {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
         <h1 className="text-2xl font-bold text-gray-800">
-          {currentUser.department?.charAt(0).toUpperCase() + currentUser.department?.slice(1)} Department Dashboard
+        {currentUser.department 
+            ? currentUser.department.charAt(0).toUpperCase() + currentUser.department.slice(1) 
+            : 'Unknown'} Department Dashboard Department Dashboard
+
+            
         </h1>
       </div>
       
